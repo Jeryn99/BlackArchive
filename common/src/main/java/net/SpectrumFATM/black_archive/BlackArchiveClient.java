@@ -22,6 +22,10 @@ public class BlackArchiveClient {
         NetworkPackets.registerClientSidePackets();
         TardisWarningRenderer.register();
         RegisterEntityRenderers.registerRenderers();
+
+        NetworkPackets.registerClientSidePackets();
+
+
         if (BlackArchiveConfig.CLIENT.shouldTimeVortexRender.get()) {
             DimensionRenderingRegistry.registerSkyRenderer(RegistryKey.of(RegistryKey.ofRegistry(new Identifier("minecraft", "dimension")), new Identifier(BlackArchive.MOD_ID, "time_vortex")), new VortexSkyRenderer());
         }

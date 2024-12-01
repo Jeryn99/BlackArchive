@@ -1,6 +1,7 @@
 package net.SpectrumFATM.black_archive.entity.features;
 
 import net.SpectrumFATM.black_archive.BlackArchive;
+import net.SpectrumFATM.black_archive.effects.EffectRegistry;
 import net.SpectrumFATM.black_archive.entity.client.EyestalkModel;
 import net.SpectrumFATM.black_archive.entity.custom.DalekPuppetEntity;
 import net.minecraft.client.render.OverlayTexture;
@@ -30,7 +31,7 @@ public class DalekEyestalkFeatureRenderer<T extends LivingEntity> extends Featur
         // Check if the entity is a player or a Dalek slave
         if (entity instanceof PlayerEntity player) {
             // Render if the player has the Dalek Nanocloud effect
-            shouldRenderEyestalk = player.hasStatusEffect(BlackArchive.DALEK_NANOCLOUD) && player.getHealth() <= 10.0F;
+            shouldRenderEyestalk = player.hasStatusEffect(EffectRegistry.DALEK_NANOCLOUD.get()) && player.getHealth() <= 10.0F;
         } else if (entity instanceof DalekPuppetEntity dalekSlave) {
             // Render if the entity is a Dalek slave
             shouldRenderEyestalk = true;

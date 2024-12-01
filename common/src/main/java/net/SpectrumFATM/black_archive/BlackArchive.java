@@ -2,6 +2,7 @@ package net.SpectrumFATM.black_archive;
 
 import net.SpectrumFATM.black_archive.config.BlackArchiveConfig;
 import net.SpectrumFATM.black_archive.effects.DalekNanocloudEffect;
+import net.SpectrumFATM.black_archive.effects.EffectRegistry;
 import net.SpectrumFATM.black_archive.entity.ModEntityRegistry;
 import net.SpectrumFATM.black_archive.entity.custom.*;
 import net.SpectrumFATM.black_archive.item.ModItemGroups;
@@ -26,27 +27,17 @@ public class BlackArchive {
     public static final String MOD_ID = "black_archive";
     public static final Logger LOGGER = LoggerFactory.getLogger("black_archive");
 
-    public static final StatusEffect DALEK_NANOCLOUD = new DalekNanocloudEffect();
-    public static final StatusEffect CYBER_CONVERSION = new DalekNanocloudEffect();
-
     public static void onInitialize() {
         // Initialize the configuration
         BlackArchiveConfig.register();
-
-        // Register the effect with the game
-        Registry.register(Registries.STATUS_EFFECT, new Identifier(BlackArchive.MOD_ID, "dalek_nanocloud"), DALEK_NANOCLOUD);
-        Registry.register(Registries.STATUS_EFFECT, new Identifier(BlackArchive.MOD_ID, "cyber_conversion"), CYBER_CONVERSION);
 
         ModItemGroups.registerItemGroups();
         ModItemGroups.registerToVanillaItemGroups();
         NetworkPackets.registerPackets();
 
-        if (FabricLoader.getInstance().getEnvironmentType() == EnvType.CLIENT) {
-            NetworkPackets.registerClientSidePackets();
-        }
-
         ModUpgrades.register();
         ModControls.register();
+        EffectRegistry.EFFECTS.registerToModBus();
         ModSounds.SOUNDS.registerToModBus();
         ModItems.ITEMS.registerToModBus();
         ModEntityRegistry.ENTITY_TYPES.registerToModBus();

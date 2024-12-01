@@ -28,7 +28,7 @@ public class DalekNanocloudEffect extends StatusEffect {
             }
 
             if (player.getInventory().contains(new ItemStack(ModItems.DALEK_BRACELET.get()))) {
-                player.removeStatusEffect(BlackArchive.DALEK_NANOCLOUD);
+                player.removeStatusEffect(EffectRegistry.DALEK_NANOCLOUD.get());
             }
 
             if (player.getHealth() <= 1f && !player.isDead()) {

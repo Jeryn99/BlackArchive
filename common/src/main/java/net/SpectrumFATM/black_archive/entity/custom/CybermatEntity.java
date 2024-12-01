@@ -1,6 +1,7 @@
 package net.SpectrumFATM.black_archive.entity.custom;
 
 import net.SpectrumFATM.black_archive.BlackArchive;
+import net.SpectrumFATM.black_archive.effects.EffectRegistry;
 import net.SpectrumFATM.black_archive.item.ModItems;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
@@ -67,7 +68,7 @@ public class CybermatEntity extends HostileEntity {
 
     public static void applyInfinitePotionEffect(PlayerEntity player) {
         StatusEffectInstance infiniteEffect = new StatusEffectInstance(
-                BlackArchive.CYBER_CONVERSION,
+                EffectRegistry.CYBER_CONVERSION.get(),
                 -1,
                 0,
                 false,

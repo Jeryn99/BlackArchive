@@ -5,6 +5,7 @@ import net.SpectrumFATM.black_archive.block.custom.DalekGravityGenBlock;
 import net.SpectrumFATM.black_archive.block.custom.GravityGenBlock;
 import net.SpectrumFATM.black_archive.block.custom.OxygenGenBlock;
 import net.SpectrumFATM.black_archive.config.BlackArchiveConfig;
+import net.SpectrumFATM.black_archive.effects.EffectRegistry;
 import net.SpectrumFATM.black_archive.entity.custom.CybermanEntity;
 import net.SpectrumFATM.black_archive.item.ModItems;
 import net.minecraft.block.BlockState;
@@ -131,7 +132,7 @@ public class LifeSupportUtil {
 
     public static void applyInfinitePotionEffect(PlayerEntity player) {
         StatusEffectInstance infiniteEffect = new StatusEffectInstance(
-                BlackArchive.DALEK_NANOCLOUD,
+                EffectRegistry.DALEK_NANOCLOUD.get(),
                 -1,
                 0,
                 false,
