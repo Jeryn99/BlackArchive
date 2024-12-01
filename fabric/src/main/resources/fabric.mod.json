@@ -16,13 +16,13 @@
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"net.SpectrumFATM.black_archive.fabric.BlackArchive"
+			"net.SpectrumFATM.black_archive.fabric.BlackArchiveFabric"
 		],
 		"client": [
-			"net.SpectrumFATM.black_archive.fabric.BlackArchiveClient"
+			"net.SpectrumFATM.black_archive.fabric.BlackArchiveFabricClient"
 		],
 		"fabric-datagen": [
-			"net.SpectrumFATM.black_archive.fabric.BlackArchiveDataGenerator"
+			"net.SpectrumFATM.black_archive.BlackArchiveDataGenerator"
 		]
 	},
 	"mixins": [
